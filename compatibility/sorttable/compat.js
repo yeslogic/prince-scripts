@@ -2,7 +2,7 @@
 * This script makes sorttables.js by Stuart Langridge work better in Prince
 * Usage: call Prince with arguments
 *   --javascript --script compat.js
-* and the file name or URL of a page using Highchart.
+* and the file name or URL of a page using SortTables.
 */
 
 /*
