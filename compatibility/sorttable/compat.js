@@ -20,6 +20,7 @@ function onlyDirectChildren(node, collection){
 * Fake support for some DOM properties Prince is missing:
 *    x HTMLTableElement.rows
 *    x HTMLTableSectionElement.rows
+*    x HTMLTableElement.tHead
 *    x HTMLTableElement.tBodies
 *    X HTMLTableRowElement.cells
 */
@@ -55,6 +56,18 @@ if(!('tBodies' in HTMLTableElement.prototype))Object.defineProperty(
 
 		get: function(){
 			return onlyDirectChildren(this, this.getElementsByTagName('tbody'));
+		}
+	}
+
+);
+
+if(!('tHead' in HTMLTableElement.prototype))Object.defineProperty(
+	HTMLTableElement.prototype,
+	'tHead',
+	{
+
+		get: function(){
+			return onlyDirectChildren(this, this.getElementsByTagName('thead'))[0];
 		}
 	}
 
