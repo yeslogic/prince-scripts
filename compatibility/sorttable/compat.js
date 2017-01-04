@@ -2,7 +2,7 @@
 * This script makes sorttables.js by Stuart Langridge work better in Prince
 * Usage: call Prince with arguments
 *   --javascript --script compat.js
-* and the file name or URL of a page using Highchart.
+* and the file name or URL of a page using SortTables.
 */
 
 /*
@@ -20,6 +20,7 @@ function onlyDirectChildren(node, collection){
 * Fake support for some DOM properties Prince is missing:
 *    x HTMLTableElement.rows
 *    x HTMLTableSectionElement.rows
+*    x HTMLTableElement.tHead
 *    x HTMLTableElement.tBodies
 *    X HTMLTableRowElement.cells
 */
@@ -55,6 +56,18 @@ if(!('tBodies' in HTMLTableElement.prototype))Object.defineProperty(
 
 		get: function(){
 			return onlyDirectChildren(this, this.getElementsByTagName('tbody'));
+		}
+	}
+
+);
+
+if(!('tHead' in HTMLTableElement.prototype))Object.defineProperty(
+	HTMLTableElement.prototype,
+	'tHead',
+	{
+
+		get: function(){
+			return onlyDirectChildren(this, this.getElementsByTagName('thead'))[0];
 		}
 	}
 
