@@ -20,3 +20,14 @@ if(!(typeof SVGTextContentElement !== 'undefined' && SVGTextContentElement.proto
         return this.textContent.length;
     }
 }
+
+// ABC.js also calls the getExtentOfChar method
+// Note that we can not emulate or fake the actual data this method would
+// return if properly implemented. ABC.js seems to recover OK if no actual
+// values are returned but we may also find documents that are broken
+// because we can not provide this information.
+if(!(typeof SVGTextContentElement !== 'undefined' && SVGTextContentElement.prototype.getExtentOfChar)){
+    Element.prototype.getExtentOfChar = function(){
+        return {};
+    };
+}
