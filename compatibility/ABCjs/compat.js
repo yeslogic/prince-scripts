@@ -18,7 +18,7 @@ if(!('value' in tmp)){
 if(!(typeof SVGTextContentElement !== 'undefined' && SVGTextContentElement.prototype.getNumberOfChars)){
     Element.prototype.getNumberOfChars = function(){
         return this.textContent.length;
-    }
+    };
 }
 
 // ABC.js also calls the getExtentOfChar method
