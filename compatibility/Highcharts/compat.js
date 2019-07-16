@@ -34,7 +34,6 @@ function get_multiline_maxwidth(node) {
     html.split(newline_tags).forEach(function(line) {
         var txt = line.replace(/<[^>]*>?/gm, '');
         if(txt.length > txt_length) txt_length = txt.length;  // determine longest line
-        console.log(html + " | " + line);
     });
     return txt_length;
 }
