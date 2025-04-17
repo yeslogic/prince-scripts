@@ -15,7 +15,7 @@ The following document shows how use MathJax with Prince. Note that when running
   <title>MathJax SVG Example</title>
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="compat.js"></script><!-- script from prince-scripts -->
-  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js"></script>
 </head>
 <body>
   <h1>MathJax Sample</h1>
