@@ -4,7 +4,9 @@ This script allows Prince to render mathematics with [MathJax](https://www.mathj
 
 ## Sample HTML
 
-The following document shows how use MathJax with Prince. Note that when running Prince the `--javascript` option must be supplied.
+This following document works on Prince 16 with MathJax 3.1.4 and 3.2.0.
+
+Note that when running Prince the `--javascript` option must be supplied.
 
 ```html
 <!DOCTYPE html>
